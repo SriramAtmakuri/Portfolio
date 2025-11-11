@@ -41,7 +41,8 @@ export const Hero = () => {
 
   return (
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
-      <div className="container mx-auto px-4 z-10">
+      
+      <div className="container mx-auto z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -110,7 +111,6 @@ export const Hero = () => {
             </motion.a>
           </motion.div>
 
-          {/* Social Icons - MOVED INSIDE THE CENTERED DIV */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -156,15 +156,13 @@ export const Hero = () => {
       >
         <ChevronDown className="w-8 h-8 text-primary animate-pulse" />
       </motion.div>
-      
-      {/* Floating orbs */}
       <motion.div
         animate={{
           x: [0, 100, 0],
           y: [0, -100, 0],
         }}
         transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-        className="absolute top-1/4 left-1/4 w-64 h-64 bg-primary/10 rounded-full blur-3xl"
+        className="absolute top-1/4 left-1/4 w-32 h-32 md:w-64 md:h-64 bg-primary/10 rounded-full blur-3xl"
       />
       <motion.div
         animate={{
@@ -172,8 +170,9 @@ export const Hero = () => {
           y: [0, 100, 0],
         }}
         transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
-        className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-secondary/10 rounded-full blur-3xl"
+        className="absolute bottom-1/4 right-1/4 w-64 h-64 md:w-96 md:h-96 bg-secondary/10 rounded-full blur-3xl"
       />
     </section>
   );
 };
+export default Hero;
