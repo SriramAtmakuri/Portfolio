@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Code2, Database, Cloud, Zap, GraduationCap } from 'lucide-react';
+import { Code2, Database, Cloud, Zap, GraduationCap, Server, Workflow } from 'lucide-react';
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -9,8 +9,10 @@ gsap.registerPlugin(ScrollTrigger);
 
 const skills = [
   { name: 'Frontend Development', level: 90, icon: Code2 },
-  { name: 'Cloud Architecture', level: 85, icon: Cloud },
+  { name: 'Backend Development', level: 90, icon: Server },
+  { name: 'Cloud Architecture', level: 89, icon: Cloud },
   { name: 'Database Design', level: 88, icon: Database },
+  { name: 'DevOps & CI/CD', level: 89, icon: Workflow },
   { name: 'Performance Optimization', level: 92, icon: Zap },
 ];
 
@@ -40,12 +42,23 @@ export const About = () => {
   return (
     <section id="about" ref={sectionRef} className="min-h-screen py-20">
       <div className="container mx-auto px-4">
-        <div ref={titleRef} className="text-center mb-16">
+        <div ref={titleRef} className="text-center mb-12">
           <h2 className="text-4xl md:text-6xl font-bold font-space gradient-text mb-4">
             About Me
           </h2>
           <div className="w-20 h-1 bg-primary mx-auto"></div>
         </div>
+
+        {/* Personal Intro - Modern & Larger */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="max-w-4xl mx-auto text-center mb-16"
+        >
+          <p className="text-xl md:text-2xl text-muted-foreground font-inter leading-relaxed">
+            Five years of transforming complex challenges into scalable solutions. What started as pure curiosity has evolved into a passion for building systems that truly make an impact. Currently exploring the exciting world of AI-powered automation to unlock new possibilities and push the boundaries of developer productivity.          </p>
+        </motion.div>
 
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <motion.div
@@ -76,8 +89,8 @@ export const About = () => {
             >
               <Code2 className="w-8 h-8 text-primary mb-3" />
               <h3 className="text-xl font-bold font-space mb-2">Full-Stack Development</h3>
-              <p className="text-muted-foreground font-inter">
-                Expert in MERN stack, microservices architecture, and modern web frameworks with proven track record in building scalable applications.
+              <p className="text-muted-foreground font-inter text-justify">
+                Expert in MERN stack, microservices architecture, and modern web frameworks with proven experience building highly scalable, production-ready applications that deliver seamless user experiences. Currently integrating AI capabilities and LLMs to build intelligent, smart automation systems.
               </p>
             </motion.div>
 
@@ -87,9 +100,9 @@ export const About = () => {
               className="glass-card p-6 rounded-2xl"
             >
               <Cloud className="w-8 h-8 text-primary mb-3" />
-              <h3 className="text-xl font-bold font-space mb-2">Cloud Architecture</h3>
-              <p className="text-muted-foreground font-inter">
-                Designing and deploying robust cloud infrastructure on AWS with Lambda, S3, DynamoDB, and comprehensive DevOps practices.
+              <h3 className="text-xl font-bold font-space mb-2">Cloud Architecture & System Design</h3>
+              <p className="text-muted-foreground font-inter text-justify">
+                Architecting and deploying scalable cloud infrastructure on AWS with Lambda, S3, DynamoDB, and comprehensive DevOps practices. Expertise in distributed systems, microservices patterns, dynamic load balancing and designing robust fault-tolerant architectures. AWS Solutions Architect certified.
               </p>
             </motion.div>
 
@@ -100,8 +113,8 @@ export const About = () => {
             >
               <Database className="w-8 h-8 text-primary mb-3" />
               <h3 className="text-xl font-bold font-space mb-2">Database Design & Optimization</h3>
-              <p className="text-muted-foreground font-inter">
-                Proficient in SQL and NoSQL databases including PostgreSQL, MongoDB, MySQL, DynamoDB with focus on performance optimization.
+              <p className="text-muted-foreground font-inter text-justify">
+                Proficient in both SQL and NoSQL databases including PostgreSQL, MongoDB, MySQL, and DynamoDB with strong focus on core performance optimization, efficient schema design, and scalable data architecture. Experienced in schema normalization, indexing, and data integrity across systems.
               </p>
             </motion.div>
           </motion.div>
@@ -111,7 +124,7 @@ export const About = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, staggerChildren: 0.1 }}
-            className="space-y-6"
+            className="space-y-6 flex flex-col justify-center"
           >
             {skills.map((skill, index) => (
               <motion.div
@@ -119,20 +132,22 @@ export const About = () => {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.15, type: 'spring', stiffness: 100 }}
+                transition={{ delay: index * 0.1, type: 'spring', stiffness: 100 }}
                 whileHover={{ scale: 1.05, x: 10, rotateY: 5 }}
                 className="glass-card p-6 rounded-xl cursor-default"
               >
-                <div className="flex items-center gap-4 mb-3">
-                  <skill.icon className="w-6 h-6 text-primary" />
-                  <span className="font-space font-medium">{skill.name}</span>
+                <div className="flex items-center justify-between gap-4 mb-3">
+                  <div className="flex items-center gap-4">
+                    <skill.icon className="w-6 h-6 text-primary" />
+                    <span className="font-space font-medium text-lg">{skill.name}</span>
+                  </div>
                 </div>
                 <div className="relative h-2 bg-muted rounded-full overflow-hidden">
                   <motion.div
                     initial={{ width: 0 }}
                     whileInView={{ width: `${skill.level}%` }}
                     viewport={{ once: true }}
-                    transition={{ duration: 1.5, delay: index * 0.15, ease: 'easeOut' }}
+                    transition={{ duration: 1.5, delay: index * 0.1, ease: 'easeOut' }}
                     className="absolute h-full bg-gradient-to-r from-primary to-secondary rounded-full shadow-lg shadow-primary/50"
                   />
                 </div>

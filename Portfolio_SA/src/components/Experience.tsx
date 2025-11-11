@@ -65,11 +65,13 @@ export const Experience = () => {
                   stiffness: 100
                 }}
                 className={`relative mb-12 ${
-                  index % 2 === 0 ? 'md:pr-8 md:text-right' : 'md:pl-8 md:ml-auto'
+                  index % 2 === 0 ? 'md:pr-8' : 'md:pl-8 md:ml-auto'
                 } md:w-1/2`}
               >
                 <motion.div 
-                  className="absolute left-0 md:left-auto md:right-[-4px] top-0 w-3 h-3 bg-primary rounded-full md:translate-x-1/2 shadow-lg shadow-primary/50"
+                  className={`absolute ${
+                    index % 2 === 0 ? 'md:right-[-4px]' : 'md:left-[-4px]'
+                  } left-0 top-0 w-3 h-3 bg-primary rounded-full shadow-lg shadow-primary/50`}
                   whileInView={{ scale: [0, 1.5, 1] }}
                   transition={{ duration: 0.5 }}
                 />

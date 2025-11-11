@@ -1,12 +1,19 @@
 import { motion } from 'framer-motion';
-import { ChevronDown, Download } from 'lucide-react';
-import { useEffect, useRef } from 'react';
+import { ChevronDown, Download, Github, Linkedin, Mail } from 'lucide-react';
+import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { portfolioConfig } from '@/config/portfolio';
 
 export const Hero = () => {
   const titleRef = useRef<HTMLHeadingElement>(null);
   const subtitleRef = useRef<HTMLHeadingElement>(null);
+
+  const titles = [
+    "Full Stack Engineer & AWS Solutions Architect",
+    "Creating AI-Powered Developer Tools & Automation",
+    "Building Scalable Cloud-Native Applications"
+  ];
+  const [currentTitle, setCurrentTitle] = useState(0);
 
   useEffect(() => {
     if (titleRef.current && subtitleRef.current) {
@@ -22,6 +29,14 @@ export const Hero = () => {
         { y: 0, opacity: 1, duration: 1, ease: 'power3.out', delay: 0.6 }
       );
     }
+  }, []);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentTitle((prev) => (prev + 1) % titles.length);
+    }, 3000);
+    
+    return () => clearInterval(interval);
   }, []);
 
   return (
@@ -49,12 +64,16 @@ export const Hero = () => {
             {portfolioConfig.name}
           </h1>
           
-          <h2
-            ref={subtitleRef}
-            className="text-2xl md:text-4xl font-space gradient-text mb-8"
-          >
-            {portfolioConfig.title}
-          </h2>
+         <motion.h2
+          key={currentTitle}
+          ref={subtitleRef}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="text-2xl md:text-4xl font-space gradient-text mb-8"
+        >
+          {titles[currentTitle]}
+        </motion.h2>
           
           <motion.p
             initial={{ opacity: 0 }}
@@ -90,6 +109,43 @@ export const Hero = () => {
               Get In Touch
             </motion.a>
           </motion.div>
+
+          {/* Social Icons - MOVED INSIDE THE CENTERED DIV */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1.2 }}
+            className="flex gap-6 justify-center mt-8"
+          >
+            <motion.a
+              href="https://github.com/SriramAtmakuri"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.2, color: "#64ffda" }}
+              className="text-muted-foreground hover:text-primary transition-colors"
+            >
+              <Github className="w-6 h-6" />
+            </motion.a>
+            
+            <motion.a
+              href="https://www.linkedin.com/in/sriramatmakuri/"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.2, color: "#64ffda" }}
+              className="text-muted-foreground hover:text-primary transition-colors"
+            >
+              <Linkedin className="w-6 h-6" />
+            </motion.a>
+            
+            <motion.a
+              href="mailto:sriramatmakuri1@gmail.com"
+              whileHover={{ scale: 1.2, color: "#64ffda" }}
+              className="text-muted-foreground hover:text-primary transition-colors"
+            >
+              <Mail className="w-6 h-6" />
+            </motion.a>
+          </motion.div>
+
         </motion.div>
       </div>
       

@@ -1,5 +1,5 @@
-import { motion } from 'framer-motion';
-import { ExternalLink, Github } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { ExternalLink, Github, X } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -9,6 +9,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 export const Projects = () => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const [selectedProject, setSelectedProject] = useState<number | null>(null);
   const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -59,6 +60,7 @@ export const Projects = () => {
               onMouseLeave={() => setHoveredIndex(null)}
               whileHover={{ y: -10 }}
               transition={{ type: 'spring', stiffness: 300 }}
+              onClick={() => setSelectedProject(index)}
             >
               <div className="glass-card rounded-2xl overflow-hidden group cursor-pointer h-full">
                 <div className="relative overflow-hidden h-64">
@@ -95,20 +97,13 @@ export const Projects = () => {
                     ))}
                   </div>
                   
-                  <motion.div
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ 
-                      opacity: hoveredIndex === index ? 1 : 0,
-                      y: hoveredIndex === index ? 0 : 10
-                    }}
-                    transition={{ duration: 0.3 }}
-                    className="flex gap-4"
-                  >
+                  <div className="flex gap-4 items-center">
                     {project.live && (
                       <motion.a
                         href={project.live}
                         target="_blank"
                         rel="noopener noreferrer"
+                        onClick={(e) => e.stopPropagation()}
                         className="flex items-center gap-2 text-primary hover:underline"
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
@@ -122,6 +117,7 @@ export const Projects = () => {
                         href={project.github}
                         target="_blank"
                         rel="noopener noreferrer"
+                        onClick={(e) => e.stopPropagation()}
                         className="flex items-center gap-2 text-primary hover:underline"
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
@@ -130,13 +126,141 @@ export const Projects = () => {
                         <span className="font-inter">Source</span>
                       </motion.a>
                     )}
-                  </motion.div>
+                  </div>
                 </div>
               </div>
             </motion.div>
           ))}
         </div>
       </div>
+
+      {/* Modal for Case Study */}
+      <AnimatePresence>
+        {selectedProject !== null && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 flex items-center justify-center p-4"
+            onClick={() => setSelectedProject(null)}
+          >
+            {/* Backdrop with blur */}
+            <motion.div 
+              className="absolute inset-0 bg-background/80 backdrop-blur-sm"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+            />
+            
+            {/* Modal Content */}
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0, y: 20 }}
+              animate={{ scale: 1, opacity: 1, y: 0 }}
+              exit={{ scale: 0.9, opacity: 0, y: 20 }}
+              transition={{ type: 'spring', damping: 25 }}
+              className="relative glass-card rounded-2xl max-w-4xl w-full max-h-[85vh] overflow-hidden"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* Close Button */}
+              <button
+                onClick={() => setSelectedProject(null)}
+                className="absolute top-4 right-4 z-10 p-2 rounded-full bg-muted hover:bg-muted/80 transition-colors"
+              >
+                <X className="w-6 h-6" />
+              </button>
+
+              {/* Scrollable Content */}
+              <div className="overflow-y-auto max-h-[85vh] p-8">
+                <div className="mb-6">
+                  <img
+                    src={portfolioConfig.projects[selectedProject].image}
+                    alt={portfolioConfig.projects[selectedProject].title}
+                    className="w-full h-64 object-cover rounded-lg mb-6"
+                  />
+                  <h2 className="text-3xl md:text-4xl font-bold font-space gradient-text mb-4">
+                    {portfolioConfig.projects[selectedProject].title}
+                  </h2>
+                  
+                  <div className="flex flex-wrap gap-2 mb-6">
+                    {portfolioConfig.projects[selectedProject].tech.map((tech, i) => (
+                      <span
+                        key={i}
+                        className="px-3 py-1 bg-primary/20 text-primary rounded-full text-sm font-inter"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Case Study Content */}
+                <div className="space-y-6 font-inter text-muted-foreground">
+                  <div>
+                    <h3 className="text-xl font-bold text-foreground mb-3">Overview</h3>
+                    <p>{portfolioConfig.projects[selectedProject].description}</p>
+                  </div>
+
+                  {portfolioConfig.projects[selectedProject].caseStudy && (
+                    <>
+                      <div>
+                        <h3 className="text-xl font-bold text-foreground mb-3">Challenge</h3>
+                        <p>{portfolioConfig.projects[selectedProject].caseStudy.challenge}</p>
+                      </div>
+
+                      <div>
+                        <h3 className="text-xl font-bold text-foreground mb-3">Solution</h3>
+                        <p>{portfolioConfig.projects[selectedProject].caseStudy.solution}</p>
+                      </div>
+
+                      <div>
+                        <h3 className="text-xl font-bold text-foreground mb-3">Impact</h3>
+                        <ul className="list-disc list-inside space-y-2">
+                          {portfolioConfig.projects[selectedProject].caseStudy.impact.map((item, i) => (
+                            <li key={i}>{item}</li>
+                          ))}
+                        </ul>
+                      </div>
+
+                      {portfolioConfig.projects[selectedProject].caseStudy.techDetails && (
+                        <div>
+                          <h3 className="text-xl font-bold text-foreground mb-3">Technical Details</h3>
+                          <p>{portfolioConfig.projects[selectedProject].caseStudy.techDetails}</p>
+                        </div>
+                      )}
+                    </>
+                  )}
+
+                  {/* Links */}
+                  <div className="flex gap-4 pt-4 border-t border-primary/20">
+                    {portfolioConfig.projects[selectedProject].live && (
+                      
+                        <a href={portfolioConfig.projects[selectedProject].live}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 text-primary hover:underline font-medium"
+                      >
+                        <ExternalLink className="w-5 h-5" />
+                        Live Demo
+                      </a>
+                    )}
+                    {portfolioConfig.projects[selectedProject].github && (
+                      
+                        <a href={portfolioConfig.projects[selectedProject].github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 text-primary hover:underline font-medium"
+                      >
+                        <Github className="w-5 h-5" />
+                        View Source
+                      </a>
+                    )}
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 };

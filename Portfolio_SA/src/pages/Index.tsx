@@ -24,7 +24,7 @@ const Index = () => {
         <Contact />
       </main>
       <footer className="py-8 text-center text-muted-foreground font-inter border-t border-primary/20">
-        <p>© 2024 {portfolioConfig.name}. Built with passion and cutting-edge tech.</p>
+        <p>© 2024 {portfolioConfig.name}.</p>
       </footer>
     </div>
   );
