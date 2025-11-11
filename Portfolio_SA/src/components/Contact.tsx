@@ -114,16 +114,6 @@ export const Contact = () => {
                   <span className="font-inter truncate">{portfolioConfig.linkedin.replace('https://', '')}</span>
                 </motion.a>
                 
-                <motion.a
-                  href={portfolioConfig.twitter}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-4 text-muted-foreground hover:text-primary transition-colors"
-                  whileHover={{ x: 10 }}
-                >
-                  <Twitter className="w-6 h-6" />
-                  <span className="font-inter truncate">{portfolioConfig.twitter.replace('https://', '')}</span>
-                </motion.a>
               </div>
             </div>
           </motion.div>

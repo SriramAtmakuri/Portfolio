@@ -10,10 +10,9 @@ export const portfolioConfig = {
   resumePath: "/resume.pdf", // Upload your resume to /public/resume.pdf
   
   // Social Links
-  email: "hello@example.com",
-  github: "https://github.com/yourusername",
-  linkedin: "https://linkedin.com/in/yourprofile",
-  twitter: "https://twitter.com/yourhandle",
+  email: "sriramatmakuri1@gmail.com",
+  github: "https://github.com/SriramAtmakuri",
+  linkedin: "https://www.linkedin.com/in/sriramatmakuri/",
 
   // Education
   education: {
