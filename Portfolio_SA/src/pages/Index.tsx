@@ -11,21 +11,23 @@ import { portfolioConfig } from '@/config/portfolio';
 
 const Index = () => {
   return (
-    <div className="relative">
+    <div className="relative overflow-x-hidden"> 
       <ScrollProgress />
       <ParticleBackground />
       <Navigation />
-      <main>
-        <Hero />
-        <About />
-        <Projects />
-        <Skills />
-        <Experience />
-        <Contact />
-      </main>
-      <footer className="py-8 text-center text-muted-foreground font-inter border-t border-primary/20">
-        <p>© 2024 {portfolioConfig.name}.</p>
-      </footer>
+      <div className="mx-auto max-w-7xl px-6 sm:px-6 lg:px-8">
+        <main>
+          <Hero />
+          <About />
+          <Projects />
+          <Skills />
+          <Experience />
+          <Contact />
+        </main>
+        <footer className="py-8 text-center text-muted-foreground font-inter border-t border-primary/20">
+          <p>© 2024 {portfolioConfig.name}.</p>
+        </footer>
+      </div>
     </div>
   );
 };
