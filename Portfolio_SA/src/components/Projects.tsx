@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from 'framer-motion';
-import { ExternalLink, Github, X } from 'lucide-react';
+import { ExternalLink, Github, X, Eye, EyeOff, EyeClosed } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -76,6 +76,36 @@ export const Projects = () => {
                     initial={{ opacity: 0.6 }}
                     whileHover={{ opacity: 0.8 }}
                   />
+                 <motion.div
+                    className="absolute top-4 right-4 z-10 text-primary drop-shadow-lg" 
+                    initial={{ scale: 1, rotate: 0 }}
+                    whileHover={{ scale: 1.15, rotate: 5 }} 
+                    whileTap={{ scale: 1.15, rotate: 5 }}
+                    transition={{ type: 'spring', stiffness: 400 }}
+                  >
+                    <AnimatePresence mode="wait">
+                      {hoveredIndex === index ? (
+                        <motion.div
+                          key="eye-open"
+                          initial={{ opacity: 0, y: -5 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          exit={{ opacity: 0, y: 5 }}
+                        >
+                          <Eye className="w-6 h-6 text-primary" />
+                        </motion.div>
+                      ) : (
+                        <motion.div
+                          key="eye-closed-lashes"
+                          initial={{ opacity: 0, y: -5 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          exit={{ opacity: 0, y: 5 }}
+                        >
+                          <EyeClosed className="w-6 h-6 text-primary" /> 
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                    <span className="sr-only">Click to View Details</span>
+                  </motion.div>
                 </div>
               
                 <div className="p-6">
