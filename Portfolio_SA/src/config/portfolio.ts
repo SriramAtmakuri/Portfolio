@@ -7,7 +7,7 @@ export const portfolioConfig = {
   description: "Specialized in cloud architecture, full-stack development, and scalable systems. Hands-on experience in MERN stack, AWS, database design optimization, and agile software development lifecycle.",
   
   // Resume Configuration
-  resumePath: "/resume.pdf", // Upload your resume to /public/resume.pdf
+  resumePath: "https://raw.githubusercontent.com/SriramAtmakuri/Portfolio/main/Portfolio_SA/public/Sriram_Atmakuri_Resume.pdf", // Upload your resume to /public/resume.pdf
   
   // Social Links
   email: "sriramatmakuri1@gmail.com",
