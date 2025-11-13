@@ -12,7 +12,7 @@ export const portfolioConfig = {
   // Social Links
   email: "sriramatmakuri1@gmail.com",
   github: "https://github.com/SriramAtmakuri",
-  linkedin: "https://www.linkedin.com/in/sriramatmakuri/",
+  linkedin: "https://linkedin.com/in/sriramatmakuri/",
 
   // Education
   education: {
@@ -84,7 +84,7 @@ export const portfolioConfig = {
   projects: [
     {
       title: 'DevFlow - AI-Powered Coding Knowledge Base',
-      description: 'Built full-stack RAG application using React, FastAPI, and ChromaDB for semantic search across coding documentation. Integrated Google Gemini AI for natural language query processing, enabling developers to search personal knowledge base achieving intelligent context-aware responses.',
+      description: 'Built full-stack RAG application using React, FastAPI, and ChromaDB for semantic search across coding documentation. Integrated Google Gemini AI for natural language focused query processing, enabling developers to search personal knowledge base achieving intelligent context-aware responses.',
       tech: ['React', 'Vite', 'Python', 'FastAPI', 'ChromaDB', 'Google Gemini', 'SQLite', 'Sentence Transformers'],
       image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=500&fit=crop',
       github: 'https://github.com/SriramAtmakuri/devflow',
@@ -106,8 +106,8 @@ export const portfolioConfig = {
     },
     {
       title: 'Global Logistics Emission Council',
-      description: 'Designed data validation framework using AWS integrations with localization in user preferred languages, improved accuracy by 15% and ensured schema compliance for carrier emissions data supporting Amazon\'s carbon footprint tracking and GLEC compliance.',
-      tech: ['Kotlin', 'Panther', 'AWS Lambda', 'S3', 'CloudWatch'],
+      description: 'Designed data validation framework using AWS integrations with localization in user preferred languages, improved accuracy by 15% and ensured schema compliance aligned for carrier emissions data supporting Amazon\'s carbon footprint tracking and overall GLEC compliance. This solution utilized AWS Step Functions for secure orchestration, leveraging Lambda for real-time validation and S3 for storing schema metadata, enabling automated end-to-end testing.',
+      tech: ['Kotlin', 'Panther', 'AWS Lambda', 'S3', 'CloudWatch', 'EC2', 'React', 'Figma'],
       image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=500&fit=crop',
       github: '',
       live: '',
@@ -127,7 +127,7 @@ export const portfolioConfig = {
     },
     {
       title: 'Business Management Platform',
-      description: 'Orchestrated intelligent microservices framework using Node.js Express, React and MongoDB with integrated Tesseract OCR and spaCy NLP models for automated document intelligence and smart categorization, achieving 90% accuracy through Docker containerization.',
+      description: 'Orchestrated distributed intelligent microservices framework using Node.js Express, React and MongoDB with fully integrated Tesseract OCR and spaCy NLP models for automated document intelligence and quick smart categorization, achieving 90% accuracy consistent through Docker containerization.',
       tech: ['MERN Stack', 'Tesseract', 'spaCy', 'Docker', 'LangChain'],
       image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=500&fit=crop',
       github: '',
@@ -149,7 +149,7 @@ export const portfolioConfig = {
     },
     {
         title: 'Smart Appliance Automation',
-        description: 'Constructed machine learning model using TensorFlow with Deep Q Learning and LSTM algorithms, trained on user behavior data to achieve 80% accuracy in predicting appliance usage patterns for performance optimization.',
+        description: 'Constructed machine learning model using TensorFlow with Deep Q Learning and LSTM algorithms, trained on user behavior data events to achieve 80% accuracy in predicting appliance usage patterns for performance optimization.',
         tech: ['Python', 'TensorFlow', 'IoT', 'MQTT', 'Raspberry Pi', 'Redis', 'Azure', 'Kubernetes'],
         image: 'https://images.unsplash.com/photo-1608377205619-03a0b4c4e270?w=800&h=500&fit=crop',
         github: '',

@@ -90,7 +90,7 @@ export const About = () => {
               <Code2 className="w-8 h-8 text-primary mb-3" />
               <h3 className="text-xl font-bold font-space mb-2">Full-Stack Development</h3>
               <p className="text-muted-foreground font-inter text-justify">
-                Expert in MERN stack, microservices architecture, and modern web frameworks with proven experience building highly scalable, production-ready applications that deliver seamless user experiences. Currently integrating AI capabilities and LLMs to build intelligent, smart automation systems.
+                Expert in MERN stack, microservices architecture, and modern web with an active expertise, and building highly scalable, applications and that deliver powerful user interfaces. Currently integrating AI capabilities and LLMs to and build intelligent, smart automation systems.
               </p>
             </motion.div>
 
@@ -102,7 +102,7 @@ export const About = () => {
               <Cloud className="w-8 h-8 text-primary mb-3" />
               <h3 className="text-xl font-bold font-space mb-2">Cloud Architecture & System Design</h3>
               <p className="text-muted-foreground font-inter text-justify">
-                Architecting and deploying scalable cloud infrastructure on AWS with Lambda, S3, DynamoDB, and comprehensive DevOps practices. Expertise in distributed systems, microservices patterns, dynamic load balancing and designing robust fault-tolerant architectures. AWS Solutions Architect certified.
+                Architecting and deploying the scalable cloud infrastructure built on AWS with Lambda, S3, EventBridge, in integrating comprehensive DevOps practices. Expertise in distributed systems, microservices patterns, dynamic load balancing and designing robust fault-tolerant architectures. AWS Solutions Architect certified.
               </p>
             </motion.div>
 
@@ -114,7 +114,7 @@ export const About = () => {
               <Database className="w-8 h-8 text-primary mb-3" />
               <h3 className="text-xl font-bold font-space mb-2">Database Design & Optimization</h3>
               <p className="text-muted-foreground font-inter text-justify">
-                Proficient in both SQL and NoSQL databases including PostgreSQL, MongoDB, MySQL, and DynamoDB with strong focus on core performance optimization, efficient schema design, and scalable data architecture. Experienced in schema normalization, indexing, and data integrity across systems.
+                Proficient in both SQL and NoSQL databases including PostgreSQL, MongoDB, MySQL, and and DynamoDB with strong focus on core performance optimization, efficient schema design, and scalable data architecture. Experienced in schema normalization, indexing, and data integrity across systems.
               </p>
             </motion.div>
           </motion.div>
