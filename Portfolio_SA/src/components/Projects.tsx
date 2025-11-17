@@ -112,7 +112,7 @@ export const Projects = () => {
                   <h3 className="text-2xl font-bold font-space mb-3 text-primary">
                     {project.title}
                   </h3>
-                  <p className="text-muted-foreground mb-4 font-inter text-justify">
+                  <p className="text-muted-foreground mb-4 font-inter">
                     {project.description}
                   </p>
                   

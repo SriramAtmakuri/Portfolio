@@ -70,6 +70,13 @@ All colors MUST be HSL.
   }
 }
 
+@media (min-width: 768px) {
+  #about .glass-card p,
+  #projects .glass-card p {
+    text-align: justify;
+  }
+}
+
 @layer utilities {
   .glass-card {
     background: var(--glass-bg);
