@@ -192,7 +192,7 @@ export const portfolioConfig = {
         ],
         techDetails: 'React frontend with TypeScript for type-safe component architecture and state management. Node.js backend with Express.js for RESTful API endpoints and real-time communication. Google Gemini AI integration for natural language processing, adaptive questioning, and feedback generation. Firebase Authentication for secure user management and session handling. Firestore database for storing user profiles, interview history, and analytics data. Docker containerization for isolated, secure code execution environments preventing malicious code execution. Multi-language code execution supporting Python, JavaScript, Java, C++, and more with timeout and resource limits. WebRTC integration for video recording and streaming capabilities. Shadcn UI component library built on Radix UI primitives for accessible, customizable interface. NLP-powered resume parser extracting skills, experience, and education for question generation. Performance analytics engine tracking multiple metrics including problem-solving speed, code efficiency, and communication quality. Real-time WebSocket connections for instant AI feedback during interviews.'
       }
-    }
+    },
     {
       title: 'Smart Appliance Automation',
       description: 'Constructed machine learning model using TensorFlow with Deep Q Learning and LSTM algorithms, trained on user behavior data events to achieve 80% accuracy in predicting appliance usage patterns for performance optimization.',
