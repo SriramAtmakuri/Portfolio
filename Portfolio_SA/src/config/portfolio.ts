@@ -150,10 +150,10 @@ export const portfolioConfig = {
     {
       title: 'QueryCraft - AI-Powered Database Tool',
       description: 'Comprehensive AI-powered database development tool leveraging LLMs to bridge natural language and complex database operations. Converts plain English to optimized SQL, provides intelligent query explanations, multi-dialect support, and generates production-ready schemas.',
-      tech: ['React', 'Node.js', 'TypeScript', 'Google Gemini', 'OpenAI', 'Anthropic', 'PostgreSQL', 'MySQL', 'Prisma'],
+      tech: ['React', 'Node.js', 'TypeScript', 'PostgreSQL', 'Prisma', 'TypeORM', 'Sequelize'],
       image: 'https://images.unsplash.com/photo-1544383835-bda2bc66a55d?w=800&h=500&fit=crop',
-      github: 'https://github.com/SriramAtmakuri/querycraft', // Update with actual URL
-      live: '', // Add if deployed
+      github: '',
+      live: 'https://querycraft-app.web.app/',
       caseStudy: {
         challenge: 'Developers often struggle with writing complex SQL queries, understanding database schemas, and optimizing query performance. Traditional database management requires deep SQL knowledge, manual debugging, and time-consuming optimization processes. There was a critical need for an intelligent tool that could democratize database development by converting natural language to SQL, providing real-time explanations, debugging assistance, and supporting multiple database dialects for seamless migration.',
         solution: 'Developed QueryCraft, a comprehensive AI-powered database development platform using React and Node.js with TypeScript for type-safe development. Integrated multiple LLM providers including Google Gemini, OpenAI, Anthropic, and Groq for flexible AI capabilities. Built natural language to SQL conversion engine supporting multiple database dialects (PostgreSQL, MySQL, SQLite). Implemented intelligent query explanation system that breaks down complex queries into understandable segments. Created performance optimization analyzer providing actionable recommendations and index suggestions. Developed schema generation feature producing production-ready CREATE TABLE statements from text descriptions. Integrated vision capabilities for ERD diagram analysis and automatic schema extraction. Built smart debugging system identifying SQL errors with root cause analysis and corrections. Implemented realistic mock data generator for testing and development. Created ORM code export functionality for Prisma, TypeORM, and Sequelize. Developed simulated performance analysis providing cost and execution time estimates.',
@@ -173,10 +173,10 @@ export const portfolioConfig = {
     {
       title: 'InterviewAI - Technical Interview Platform',
       description: 'Full-stack platform revolutionizing technical interview preparation with Google Gemini AI integration. Features adaptive mock interviews, real-time code execution in sandboxed environment, smart resume analysis, video recording, and personalized performance analytics for comprehensive skill improvement.',
-      tech: ['React', 'TypeScript', 'Node.js', 'Google Gemini', 'Firebase', 'Shadcn UI', 'Docker'],
+      tech: ['React', 'TypeScript', 'Node.js', 'Express', 'Firebase', 'Shadcn UI', 'Docker', 'WebSocket'],
       image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&h=500&fit=crop',
-      github: 'https://github.com/SriramAtmakuri/interviewai', // Update with actual URL
-      live: '', // Add if deployed
+      github: '',
+      live: 'https://interviewai-app.web.app/',
       caseStudy: {
         challenge: 'Job seekers struggle with technical interview preparation lacking realistic practice environments and personalized feedback. Traditional interview prep tools offer generic questions without adapting to individual skills, provide no code execution capabilities, and fail to analyze behavioral performance. Candidates needed an immersive platform that simulates real interviews, executes code in real-time, analyzes their resume to generate targeted questions, records sessions for self-review, and tracks progress with actionable insights.',
         solution: 'Built InterviewAI, a comprehensive full-stack interview preparation platform using React and TypeScript for robust frontend development. Integrated Google Gemini AI for conducting adaptive, conversational interview sessions that adjust difficulty based on responses. Developed secure sandboxed code execution environment using Docker containers supporting multiple programming languages (Python, JavaScript, Java, C++). Implemented smart resume parsing and analysis engine using NLP to extract skills and generate targeted interview questions. Created video recording system capturing interview sessions for behavioral analysis and self-review. Built Firebase authentication and user management for secure, personalized experiences. Developed comprehensive performance analytics dashboard tracking metrics including response time, code quality, problem-solving approach, and communication skills. Designed modern responsive UI using Shadcn UI component library ensuring accessibility across devices. Implemented real-time feedback system providing instant AI-generated suggestions during mock interviews.',
