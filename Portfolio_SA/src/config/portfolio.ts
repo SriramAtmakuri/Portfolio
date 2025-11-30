@@ -5,10 +5,10 @@ export const portfolioConfig = {
   // Personal Information
   name: "Sriram Atmakuri",
   description: "Specialized in cloud architecture, full-stack development, and scalable systems. Hands-on experience in MERN stack, AWS, database design optimization, and agile software development lifecycle.",
-  
+
   // Resume Configuration
   resumePath: "https://raw.githubusercontent.com/SriramAtmakuri/Portfolio/main/Portfolio_SA/public/Sriram_Atmakuri_Resume.pdf", // Upload your resume to /public/resume.pdf
-  
+
   // Social Links
   email: "sriramatmakuri1@gmail.com",
   github: "https://github.com/SriramAtmakuri",
@@ -71,13 +71,13 @@ export const portfolioConfig = {
   skills: {
     'Programming Languages': ['Java', 'Kotlin', 'Python', 'C#', 'C++', 'JavaScript', 'TypeScript', 'Scala', 'Rust', 'Ruby'],
     'Web Development': ['React.js', 'HTML5', 'CSS3', 'Bootstrap', 'Vue.js', 'Angular', 'jQuery', 'Tailwind CSS', 'Redux'],
-    'Backend Technologies': ['Spring Boot', 'REST APIs', 'Node.js', 'Express.js', 'Django', 'FastAPI', 'Ruby on Rails', 'Twilio API' ],
+    'Backend Technologies': ['Spring Boot', 'REST APIs', 'Node.js', 'Express.js', 'Django', 'FastAPI', 'Ruby on Rails', 'Twilio API'],
     'Database & Storage': ['MySQL', 'MongoDB', 'PostgreSQL', 'DynamoDB', 'Redis', 'Vector DBs', 'ElasticSearch', 'ChromaDB', 'Neo4j'],
     'Cloud & DevOps': ['AWS Lambda', 'AWS S3', 'AWS EC2', 'AWS CloudWatch', 'AWS SQS', 'Docker', 'Kubernetes', 'Azure', 'Jenkins'],
     'Testing & Tools': ['JUnit', 'Jest', 'Selenium', 'Git', 'SonarQube', 'Postman', 'JIRA'],
-    'AI & ML' : ['TensorFlow', 'NLP', 'RAG Architecture', 'LangChain', 'PyTorch', 'HuggingFace', 'Tesseract', 'SpaCy'],
+    'AI & ML': ['TensorFlow', 'NLP', 'RAG Architecture', 'LangChain', 'PyTorch', 'HuggingFace', 'Tesseract', 'SpaCy'],
     'Architecture & Design': ['Microservices', 'Event-Driven Architecture', 'System Design', 'IoT', 'Design Patterns', 'MVC Architecture', 'API Gateway', 'MQTT'],
-    'Data Engineering' : ['Apache Spark', 'Apache Hadoop', 'Apache Kafka', 'AWS Redshift', 'AWS Glue', 'Snowflake', 'Dask']
+    'Data Engineering': ['Apache Spark', 'Apache Hadoop', 'Apache Kafka', 'AWS Redshift', 'AWS Glue', 'Snowflake', 'Dask']
   },
 
   // Projects
@@ -102,7 +102,7 @@ export const portfolioConfig = {
           'Enabled natural language queries eliminating need for exact keyword matching'
         ],
         techDetails: 'React frontend with Vite for fast build times and hot module replacement. FastAPI backend providing RESTful endpoints for search, indexing, and source management. ChromaDB vector database for high-performance similarity search with cosine distance metrics. Google Gemini AI API integration for natural language processing and answer generation. Sentence Transformers library for generating text embeddings from documentation. SQLite for lightweight persistent storage of metadata and application state. Custom document processing pipeline handling multiple file formats. Vector embedding generation for semantic representation of code and documentation. RAG architecture combining retrieval from ChromaDB with generation from Gemini AI. RESTful API design with clear separation between frontend and backend services.'
-    }
+      }
     },
     {
       title: 'Global Logistics Emission Council',
@@ -123,7 +123,7 @@ export const portfolioConfig = {
           'Supported Amazon\'s sustainability goals and commitment to the Paris Climate Agreement'
         ],
         techDetails: 'Leveraged Kotlin\'s type safety for robust validation logic, reducing runtime errors. AWS Lambda provided cost-effective serverless compute that scaled automatically with data volume. S3 ensured durable, scalable storage for emissions data with lifecycle policies for compliance. CloudWatch enabled comprehensive monitoring with custom dashboards tracking validation rates, error patterns, and system performance. Panther\'s schema validation engine enforced data quality standards and generated detailed compliance reports.'
-    }
+      }
     },
     {
       title: 'Business Management Platform',
@@ -145,32 +145,78 @@ export const portfolioConfig = {
           'Enabled real-time document insights and analytics for business intelligence'
         ],
         techDetails: 'Tesseract OCR with custom preprocessing pipelines for image enhancement, achieving 95%+ text recognition accuracy. spaCy NER models trained on domain-specific business documents with 50,000+ labeled entities. MongoDB for flexible document storage with full-text search indexes. Express.js RESTful APIs for document upload, processing, and retrieval. React frontend with Material-UI for responsive design. Docker Compose orchestration for local development and production deployment. Redis caching layer for improved search performance. LangChain integration for semantic search and document Q&A capabilities.'
-    }
+      }
     },
     {
-        title: 'Smart Appliance Automation',
-        description: 'Constructed machine learning model using TensorFlow with Deep Q Learning and LSTM algorithms, trained on user behavior data events to achieve 80% accuracy in predicting appliance usage patterns for performance optimization.',
-        tech: ['Python', 'TensorFlow', 'IoT', 'MQTT', 'Raspberry Pi', 'Redis', 'Azure', 'Kubernetes'],
-        image: 'https://images.unsplash.com/photo-1608377205619-03a0b4c4e270?w=800&h=500&fit=crop',
-        github: '',
-        live: '',
-        caseStudy: {
-          challenge: 'Traditional home automation systems required extensive manual programming and lacked intelligence to adapt to user behavior patterns. Homeowners struggled with energy waste as appliances operated on fixed schedules regardless of actual occupancy or usage needs. Existing solutions were often expensive, cloud-dependent, privacy-invasive, and failed to learn from user habits. The system needed to handle real-time sensor data from multiple IoT devices, process machine learning predictions efficiently, and provide reliable automation while maintaining low latency and high availability.',
-          solution: 'Developed an intelligent home automation platform with event-driven architecture using Python for backend services and MySQL for persistent data storage. Built machine learning models using TensorFlow with Deep Q-Learning for reinforcement learning-based appliance control decisions and LSTM networks for temporal pattern recognition in usage data. Deployed the system on Azure cloud infrastructure with Kubernetes for container orchestration and automatic scaling. Integrated Raspberry Pi edge devices with IoT sensors including temperature, humidity, motion, and energy monitoring sensors. Implemented MQTT protocol via Eclipse Mosquitto broker for lightweight messaging between edge devices and cloud services. Used Redis for high-speed caching of sensor data and ML predictions. Integrated Home Assistant as the central automation hub with custom Python components. Deployed Apache Kafka with Scala for real-time event streaming and message queuing between microservices. Used Terraform for infrastructure-as-code deployments across development and production environments. Implemented Azure DevOps for CI/CD pipelines with automated testing and deployment workflows. Set up Twilio integration for SMS and email alert notifications. Created comprehensive API testing suite achieving high validation coverage across all endpoints.',
-          impact: [
-            'Achieved 80% accuracy in predicting appliance usage patterns based on historical behavioral data',
-            'Architected the end-to-end system design including microservices architecture, event-driven patterns, and cloud infrastructure layout.',
-            'Reduced household energy consumption through intelligent scheduling and automated control',
-            'Enabled real-time processing of sensor data with sub-second latency for immediate responses',
-            'Achieved 90% functional test success rate through comprehensive API testing validation',
-            'Accelerated development time by 15% through reusable modular components architecture',
-            'Expedited delivery cycles by 20% through agile workflows and automated CI/CD pipelines',
-            'Maintained 95% code quality standards through automated testing and code review processes',
-            'Successfully automated routine appliance operations based on learned user behavior patterns',
-            'Provided scalable architecture handling multiple households with containerized microservices',
-            'Enabled hybrid edge-cloud processing for both low-latency local control and advanced analytics'
-          ],
-          techDetails: 'Raspberry Pi edge computing nodes for local sensor data collection and initial processing. Python backend microservices deployed on Azure Kubernetes Service (AKS) for orchestration and auto-scaling. TensorFlow for Deep Q-Network implementation with experience replay and epsilon-greedy exploration. LSTM neural networks for sequential pattern recognition in time-series sensor data. MySQL database for persistent storage of historical usage data and system configurations. Redis cache for high-throughput sensor data storage and ML prediction results. Eclipse Mosquitto MQTT broker for IoT device communication using pub/sub messaging pattern. Apache Kafka with Scala for distributed event streaming and real-time data pipelines between microservices. Terraform for infrastructure provisioning and management across Azure cloud resources. Azure DevOps for version control, CI/CD pipelines, and agile project management. Home Assistant integration for automation rule engine and device management. Custom Python scripts for data preprocessing, feature engineering, and model training pipelines. RESTful APIs with comprehensive testing suite for device control and status monitoring. Twilio API for programmable notifications and alerts. Kubernetes deployments with horizontal pod autoscaling for handling variable loads. Event-driven architecture enabling loose coupling and independent scaling of services.'
+      title: 'QueryCraft - AI-Powered Database Tool',
+      description: 'Comprehensive AI-powered database development tool leveraging LLMs to bridge natural language and complex database operations. Converts plain English to optimized SQL, provides intelligent query explanations, multi-dialect support, and generates production-ready schemas.',
+      tech: ['React', 'Node.js', 'TypeScript', 'Google Gemini', 'OpenAI', 'Anthropic', 'PostgreSQL', 'MySQL', 'Prisma'],
+      image: 'https://images.unsplash.com/photo-1544383835-bda2bc66a55d?w=800&h=500&fit=crop',
+      github: 'https://github.com/SriramAtmakuri/querycraft', // Update with actual URL
+      live: '', // Add if deployed
+      caseStudy: {
+        challenge: 'Developers often struggle with writing complex SQL queries, understanding database schemas, and optimizing query performance. Traditional database management requires deep SQL knowledge, manual debugging, and time-consuming optimization processes. There was a critical need for an intelligent tool that could democratize database development by converting natural language to SQL, providing real-time explanations, debugging assistance, and supporting multiple database dialects for seamless migration.',
+        solution: 'Developed QueryCraft, a comprehensive AI-powered database development platform using React and Node.js with TypeScript for type-safe development. Integrated multiple LLM providers including Google Gemini, OpenAI, Anthropic, and Groq for flexible AI capabilities. Built natural language to SQL conversion engine supporting multiple database dialects (PostgreSQL, MySQL, SQLite). Implemented intelligent query explanation system that breaks down complex queries into understandable segments. Created performance optimization analyzer providing actionable recommendations and index suggestions. Developed schema generation feature producing production-ready CREATE TABLE statements from text descriptions. Integrated vision capabilities for ERD diagram analysis and automatic schema extraction. Built smart debugging system identifying SQL errors with root cause analysis and corrections. Implemented realistic mock data generator for testing and development. Created ORM code export functionality for Prisma, TypeORM, and Sequelize. Developed simulated performance analysis providing cost and execution time estimates.',
+        impact: [
+          'Reduced SQL query development time by 70% through natural language conversion',
+          'Enabled developers with minimal SQL knowledge to generate complex database queries',
+          'Supported seamless migration between database systems with multi-dialect conversion',
+          'Automated schema generation saving hours of manual CREATE TABLE statement writing',
+          'Provided intelligent debugging reducing SQL error resolution time by 60%',
+          'Generated production-ready ORM code eliminating manual translation work',
+          'Offered performance optimization insights improving query efficiency by 40%',
+          'Integrated multiple AI providers ensuring reliability and flexible model selection'
+        ],
+        techDetails: 'React frontend with TypeScript for type-safe component development and state management. Node.js backend providing RESTful API endpoints for AI processing and database operations. Integration with Google Gemini AI for advanced natural language understanding. OpenAI GPT models for alternative query generation and optimization suggestions. Anthropic Claude for complex reasoning and explanation generation. Groq for high-speed inference and real-time query processing. Support for PostgreSQL, MySQL, and SQLite with dialect-specific query optimization. Prisma ORM integration for type-safe database access and schema management. Vision API integration for ERD diagram analysis and automatic schema extraction. Query parser and AST analyzer for intelligent code breakdown and explanation. Performance profiler providing execution plan analysis and optimization recommendations.'
+      }
+    },
+    {
+      title: 'InterviewAI - Technical Interview Platform',
+      description: 'Full-stack platform revolutionizing technical interview preparation with Google Gemini AI integration. Features adaptive mock interviews, real-time code execution in sandboxed environment, smart resume analysis, video recording, and personalized performance analytics for comprehensive skill improvement.',
+      tech: ['React', 'TypeScript', 'Node.js', 'Google Gemini', 'Firebase', 'Shadcn UI', 'Docker'],
+      image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&h=500&fit=crop',
+      github: 'https://github.com/SriramAtmakuri/interviewai', // Update with actual URL
+      live: '', // Add if deployed
+      caseStudy: {
+        challenge: 'Job seekers struggle with technical interview preparation lacking realistic practice environments and personalized feedback. Traditional interview prep tools offer generic questions without adapting to individual skills, provide no code execution capabilities, and fail to analyze behavioral performance. Candidates needed an immersive platform that simulates real interviews, executes code in real-time, analyzes their resume to generate targeted questions, records sessions for self-review, and tracks progress with actionable insights.',
+        solution: 'Built InterviewAI, a comprehensive full-stack interview preparation platform using React and TypeScript for robust frontend development. Integrated Google Gemini AI for conducting adaptive, conversational interview sessions that adjust difficulty based on responses. Developed secure sandboxed code execution environment using Docker containers supporting multiple programming languages (Python, JavaScript, Java, C++). Implemented smart resume parsing and analysis engine using NLP to extract skills and generate targeted interview questions. Created video recording system capturing interview sessions for behavioral analysis and self-review. Built Firebase authentication and user management for secure, personalized experiences. Developed comprehensive performance analytics dashboard tracking metrics including response time, code quality, problem-solving approach, and communication skills. Designed modern responsive UI using Shadcn UI component library ensuring accessibility across devices. Implemented real-time feedback system providing instant AI-generated suggestions during mock interviews.',
+        impact: [
+          'Enabled realistic interview practice with AI-powered adaptive questioning',
+          'Provided secure code execution supporting 10+ programming languages',
+          'Generated personalized interview questions based on resume analysis',
+          'Offered video recording for behavioral self-assessment and improvement',
+          'Tracked detailed performance metrics identifying strengths and weaknesses',
+          'Delivered instant AI feedback accelerating skill development by 50%',
+          'Created immersive environment bridging gap between preparation and real interviews',
+          'Achieved 95% user satisfaction rate for interview readiness improvement'
+        ],
+        techDetails: 'React frontend with TypeScript for type-safe component architecture and state management. Node.js backend with Express.js for RESTful API endpoints and real-time communication. Google Gemini AI integration for natural language processing, adaptive questioning, and feedback generation. Firebase Authentication for secure user management and session handling. Firestore database for storing user profiles, interview history, and analytics data. Docker containerization for isolated, secure code execution environments preventing malicious code execution. Multi-language code execution supporting Python, JavaScript, Java, C++, and more with timeout and resource limits. WebRTC integration for video recording and streaming capabilities. Shadcn UI component library built on Radix UI primitives for accessible, customizable interface. NLP-powered resume parser extracting skills, experience, and education for question generation. Performance analytics engine tracking multiple metrics including problem-solving speed, code efficiency, and communication quality. Real-time WebSocket connections for instant AI feedback during interviews.'
+      }
+    }
+    {
+      title: 'Smart Appliance Automation',
+      description: 'Constructed machine learning model using TensorFlow with Deep Q Learning and LSTM algorithms, trained on user behavior data events to achieve 80% accuracy in predicting appliance usage patterns for performance optimization.',
+      tech: ['Python', 'TensorFlow', 'IoT', 'MQTT', 'Raspberry Pi', 'Redis', 'Azure', 'Kubernetes'],
+      image: 'https://images.unsplash.com/photo-1608377205619-03a0b4c4e270?w=800&h=500&fit=crop',
+      github: '',
+      live: '',
+      caseStudy: {
+        challenge: 'Traditional home automation systems required extensive manual programming and lacked intelligence to adapt to user behavior patterns. Homeowners struggled with energy waste as appliances operated on fixed schedules regardless of actual occupancy or usage needs. Existing solutions were often expensive, cloud-dependent, privacy-invasive, and failed to learn from user habits. The system needed to handle real-time sensor data from multiple IoT devices, process machine learning predictions efficiently, and provide reliable automation while maintaining low latency and high availability.',
+        solution: 'Developed an intelligent home automation platform with event-driven architecture using Python for backend services and MySQL for persistent data storage. Built machine learning models using TensorFlow with Deep Q-Learning for reinforcement learning-based appliance control decisions and LSTM networks for temporal pattern recognition in usage data. Deployed the system on Azure cloud infrastructure with Kubernetes for container orchestration and automatic scaling. Integrated Raspberry Pi edge devices with IoT sensors including temperature, humidity, motion, and energy monitoring sensors. Implemented MQTT protocol via Eclipse Mosquitto broker for lightweight messaging between edge devices and cloud services. Used Redis for high-speed caching of sensor data and ML predictions. Integrated Home Assistant as the central automation hub with custom Python components. Deployed Apache Kafka with Scala for real-time event streaming and message queuing between microservices. Used Terraform for infrastructure-as-code deployments across development and production environments. Implemented Azure DevOps for CI/CD pipelines with automated testing and deployment workflows. Set up Twilio integration for SMS and email alert notifications. Created comprehensive API testing suite achieving high validation coverage across all endpoints.',
+        impact: [
+          'Achieved 80% accuracy in predicting appliance usage patterns based on historical behavioral data',
+          'Architected the end-to-end system design including microservices architecture, event-driven patterns, and cloud infrastructure layout.',
+          'Reduced household energy consumption through intelligent scheduling and automated control',
+          'Enabled real-time processing of sensor data with sub-second latency for immediate responses',
+          'Achieved 90% functional test success rate through comprehensive API testing validation',
+          'Accelerated development time by 15% through reusable modular components architecture',
+          'Expedited delivery cycles by 20% through agile workflows and automated CI/CD pipelines',
+          'Maintained 95% code quality standards through automated testing and code review processes',
+          'Successfully automated routine appliance operations based on learned user behavior patterns',
+          'Provided scalable architecture handling multiple households with containerized microservices',
+          'Enabled hybrid edge-cloud processing for both low-latency local control and advanced analytics'
+        ],
+        techDetails: 'Raspberry Pi edge computing nodes for local sensor data collection and initial processing. Python backend microservices deployed on Azure Kubernetes Service (AKS) for orchestration and auto-scaling. TensorFlow for Deep Q-Network implementation with experience replay and epsilon-greedy exploration. LSTM neural networks for sequential pattern recognition in time-series sensor data. MySQL database for persistent storage of historical usage data and system configurations. Redis cache for high-throughput sensor data storage and ML prediction results. Eclipse Mosquitto MQTT broker for IoT device communication using pub/sub messaging pattern. Apache Kafka with Scala for distributed event streaming and real-time data pipelines between microservices. Terraform for infrastructure provisioning and management across Azure cloud resources. Azure DevOps for version control, CI/CD pipelines, and agile project management. Home Assistant integration for automation rule engine and device management. Custom Python scripts for data preprocessing, feature engineering, and model training pipelines. RESTful APIs with comprehensive testing suite for device control and status monitoring. Twilio API for programmable notifications and alerts. Kubernetes deployments with horizontal pod autoscaling for handling variable loads. Event-driven architecture enabling loose coupling and independent scaling of services.'
       }
     },
   ],
