@@ -8,13 +8,13 @@ import { portfolioConfig } from '@/config/portfolio';
 gsap.registerPlugin(ScrollTrigger);
 
 export const Experience = () => {
-  const sectionRef = useRef<HTMLElement>(null);
   const timelineRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (timelineRef.current) {
+    if (!timelineRef.current) return;
+    const ctx = gsap.context(() => {
       gsap.fromTo(
-        timelineRef.current,
+        timelineRef.current!,
         { scaleY: 0 },
         {
           scaleY: 1,
@@ -28,11 +28,12 @@ export const Experience = () => {
           },
         }
       );
-    }
+    }, timelineRef);
+    return () => ctx.revert();
   }, []);
 
   return (
-    <section id="experience" ref={sectionRef} className="py-20">
+    <section id="experience" className="py-20">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0 }}

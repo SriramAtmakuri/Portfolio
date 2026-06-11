@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Mail, Github, Linkedin, Twitter } from 'lucide-react';
+import { Mail, Github, Linkedin, Copy, Check } from 'lucide-react';
 import { useState } from 'react';
 import { toast } from 'sonner';
 import { portfolioConfig } from '@/config/portfolio';
@@ -14,6 +14,18 @@ export const Contact = () => {
   });
   
   const [loading, setLoading] = useState(false);
+  const [copied, setCopied] = useState(false);
+
+  const handleCopyEmail = async () => {
+    try {
+      await navigator.clipboard.writeText(portfolioConfig.email);
+      setCopied(true);
+      toast.success('Email copied!');
+      setTimeout(() => setCopied(false), 2000);
+    } catch {
+      toast.error('Failed to copy');
+    }
+  };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData(prev => ({
@@ -54,7 +66,7 @@ export const Contact = () => {
 
   return (
     <section id="contact" className="min-h-screen py-20">
-      <div className="container mx-auto px-0">
+      <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -83,14 +95,28 @@ export const Contact = () => {
               </h3>
               
               <div className="space-y-4">
-                <motion.a
-                  href={`mailto:${portfolioConfig.email}`}
-                  className="flex items-center gap-4 text-muted-foreground hover:text-primary transition-colors"
-                  whileHover={{ x: 10 }}
-                >
-                  <Mail className="w-6 h-6" />
-                  <span className="font-inter truncate">{portfolioConfig.email}</span>
-                </motion.a>
+                <div className="flex items-center gap-2">
+                  <motion.a
+                    href={`mailto:${portfolioConfig.email}`}
+                    className="flex items-center gap-4 text-muted-foreground hover:text-primary transition-colors flex-1"
+                    whileHover={{ x: 10 }}
+                  >
+                    <Mail className="w-6 h-6 flex-shrink-0" />
+                    <span className="font-inter truncate">{portfolioConfig.email}</span>
+                  </motion.a>
+                  <motion.button
+                    onClick={handleCopyEmail}
+                    whileHover={{ scale: 1.15 }}
+                    whileTap={{ scale: 0.9 }}
+                    className="text-muted-foreground hover:text-primary transition-colors flex-shrink-0 p-1"
+                    aria-label="Copy email address"
+                  >
+                    {copied
+                      ? <Check className="w-4 h-4 text-primary" />
+                      : <Copy className="w-4 h-4" />
+                    }
+                  </motion.button>
+                </div>
                 
                 <motion.a
                   href={portfolioConfig.github}
@@ -138,7 +164,7 @@ export const Contact = () => {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 bg-muted rounded-lg focus:outline-none focus:ring-2 focus:ring-primary font-inter"
+                  className="w-full px-4 py-3 bg-muted text-foreground rounded-lg focus:outline-none focus:ring-2 focus:ring-primary font-inter"
                 />
               </div>
               
@@ -153,7 +179,7 @@ export const Contact = () => {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 bg-muted rounded-lg focus:outline-none focus:ring-2 focus:ring-primary font-inter"
+                  className="w-full px-4 py-3 bg-muted text-foreground rounded-lg focus:outline-none focus:ring-2 focus:ring-primary font-inter"
                 />
               </div>
               
@@ -168,7 +194,7 @@ export const Contact = () => {
                   onChange={handleChange}
                   required
                   rows={5}
-                  className="w-full px-4 py-3 bg-muted rounded-lg focus:outline-none focus:ring-2 focus:ring-primary font-inter resize-none"
+                  className="w-full px-4 py-3 bg-muted text-foreground rounded-lg focus:outline-none focus:ring-2 focus:ring-primary font-inter resize-none"
                 />
               </div>
               

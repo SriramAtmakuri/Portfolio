@@ -5,18 +5,18 @@ import * as THREE from 'three';
 
 function ParticleField() {
   const ref = useRef<THREE.Points>(null);
-  
+
   const particlesCount = 2000;
   const positions = useMemo(() => {
     const positions = new Float32Array(particlesCount * 3);
-    
+
     for (let i = 0; i < particlesCount; i++) {
       const i3 = i * 3;
       positions[i3] = (Math.random() - 0.5) * 10;
       positions[i3 + 1] = (Math.random() - 0.5) * 10;
       positions[i3 + 2] = (Math.random() - 0.5) * 10;
     }
-    
+
     return positions;
   }, []);
 
@@ -43,8 +43,8 @@ function ParticleField() {
 
 export const ParticleBackground = () => {
   return (
-    <div className="fixed inset-0 -z-10">
-      <Canvas camera={{ position: [0, 0, 5], fov: 75 }}>
+    <div className="fixed inset-0 -z-10 pointer-events-none">
+      <Canvas camera={{ position: [0, 0, 5], fov: 75 }} onCreated={({ gl }) => gl.setClearColor('#000F1F', 1)}>
         <ParticleField />
       </Canvas>
     </div>

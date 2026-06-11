@@ -1,20 +1,13 @@
 import { motion } from 'framer-motion';
 import { ChevronDown, Download, Github, Linkedin, Mail } from 'lucide-react';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
+import { TypeAnimation } from 'react-type-animation';
 import { portfolioConfig } from '@/config/portfolio';
 
 export const Hero = () => {
   const titleRef = useRef<HTMLHeadingElement>(null);
   const subtitleRef = useRef<HTMLHeadingElement>(null);
-
-  const titles = [
-    "Full Stack Engineer & AWS Solutions Architect",
-    "Creating AI-Powered Developer Tools & Automation",
-    "Building Scalable Cloud-Native Applications"
-  ];
-  const [currentTitle, setCurrentTitle] = useState(0);
-
   useEffect(() => {
     if (titleRef.current && subtitleRef.current) {
       gsap.fromTo(
@@ -22,7 +15,6 @@ export const Hero = () => {
         { scale: 0.8, opacity: 0 },
         { scale: 1, opacity: 1, duration: 1, ease: 'power3.out', delay: 0.3 }
       );
-
       gsap.fromTo(
         subtitleRef.current,
         { y: 50, opacity: 0 },
@@ -31,17 +23,9 @@ export const Hero = () => {
     }
   }, []);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentTitle((prev) => (prev + 1) % titles.length);
-    }, 3000);
-    
-    return () => clearInterval(interval);
-  }, []);
-
   return (
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
-      
+
       <div className="container mx-auto z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -57,25 +41,30 @@ export const Hero = () => {
           >
             Hi, I'm
           </motion.p>
-          
+
           <h1
             ref={titleRef}
             className="text-6xl md:text-8xl font-bold font-space mb-6 glow-text"
           >
             {portfolioConfig.name}
           </h1>
-          
-         <motion.h2
-          key={currentTitle}
-          ref={subtitleRef}
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="text-2xl md:text-4xl font-space gradient-text mb-8"
-        >
-          {titles[currentTitle]}
-        </motion.h2>
-          
+
+          <div className="h-10 md:h-14 flex items-center justify-center mb-8" ref={subtitleRef}>
+            <h2 className="text-2xl md:text-4xl font-space gradient-text">
+              <TypeAnimation
+                sequence={[
+                  'Full Stack Engineer & AWS Solutions Architect', 2500,
+                  'AI-Powered Automation & Developer Tools', 2500,
+                  'Scalable Cloud-Native & Distributed Systems', 2500,
+                ]}
+                wrapper="span"
+                speed={60}
+                deletionSpeed={80}
+                repeat={Infinity}
+              />
+            </h2>
+          </div>
+
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -84,7 +73,7 @@ export const Hero = () => {
           >
             {portfolioConfig.description}
           </motion.p>
-          
+
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -118,7 +107,7 @@ export const Hero = () => {
             className="flex gap-6 justify-center mt-8"
           >
             <motion.a
-              href="https://github.com/SriramAtmakuri"
+              href={portfolioConfig.github}
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.2, color: "#64ffda" }}
@@ -126,9 +115,9 @@ export const Hero = () => {
             >
               <Github className="w-6 h-6" />
             </motion.a>
-            
+
             <motion.a
-              href="https://www.linkedin.com/in/sriramatmakuri/"
+              href={portfolioConfig.linkedin}
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.2, color: "#64ffda" }}
@@ -136,9 +125,9 @@ export const Hero = () => {
             >
               <Linkedin className="w-6 h-6" />
             </motion.a>
-            
+
             <motion.a
-              href="mailto:sriramatmakuri1@gmail.com"
+              href={`mailto:${portfolioConfig.email}`}
               whileHover={{ scale: 1.2, color: "#64ffda" }}
               className="text-muted-foreground hover:text-primary transition-colors"
             >
@@ -148,7 +137,7 @@ export const Hero = () => {
 
         </motion.div>
       </div>
-      
+
       <motion.div
         animate={{ y: [0, 10, 0] }}
         transition={{ duration: 2, repeat: Infinity }}

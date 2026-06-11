@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Code2, Database, Cloud, Zap, GraduationCap, Server, Workflow } from 'lucide-react';
+import { Code2, Database, Cloud, Zap, GraduationCap, Server, Workflow, Monitor, Globe, HardDrive } from 'lucide-react';
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -8,22 +8,22 @@ import { portfolioConfig } from '@/config/portfolio';
 gsap.registerPlugin(ScrollTrigger);
 
 const skills = [
-  { name: 'Frontend Development', level: 90, icon: Code2 },
+  { name: 'Frontend Development', level: 90, icon: Monitor },
   { name: 'Backend Development', level: 90, icon: Server },
-  { name: 'Cloud Architecture', level: 89, icon: Cloud },
-  { name: 'Database Design', level: 88, icon: Database },
+  { name: 'Cloud Architecture', level: 89, icon: Globe },
+  { name: 'Database Design', level: 88, icon: HardDrive },
   { name: 'DevOps & CI/CD', level: 89, icon: Workflow },
   { name: 'Performance Optimization', level: 92, icon: Zap },
 ];
 
 export const About = () => {
-  const sectionRef = useRef<HTMLElement>(null);
   const titleRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (sectionRef.current && titleRef.current) {
+    if (!titleRef.current) return;
+    const ctx = gsap.context(() => {
       gsap.fromTo(
-        titleRef.current,
+        titleRef.current!,
         { y: 100, opacity: 0 },
         {
           y: 0,
@@ -36,11 +36,12 @@ export const About = () => {
           },
         }
       );
-    }
+    }, titleRef);
+    return () => ctx.revert();
   }, []);
 
   return (
-    <section id="about" ref={sectionRef} className="min-h-screen py-20">
+    <section id="about" className="min-h-screen py-20">
       <div className="container mx-auto px-4">
         <div ref={titleRef} className="text-center mb-12">
           <h2 className="text-4xl md:text-6xl font-bold font-space gradient-text mb-4">
@@ -57,7 +58,7 @@ export const About = () => {
           className="max-w-4xl mx-auto text-center mb-16"
         >
           <p className="text-xl md:text-2xl text-muted-foreground font-inter leading-relaxed">
-            Five years of transforming complex challenges into scalable solutions. What started as pure curiosity has evolved into a passion for building systems that truly make an impact. Currently exploring the exciting world of AI-powered automation to unlock new possibilities and push the boundaries of developer productivity.          </p>
+            Started in IoT and systems automation, moved into cloud infrastructure, backend services, and ML systems at Amazon, and now building AI tools that make engineers faster at what they already do well. Across every role and stack, the goal has been to build systems that hold under production load.</p>
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -90,7 +91,7 @@ export const About = () => {
               <Code2 className="w-8 h-8 text-primary mb-3" />
               <h3 className="text-xl font-bold font-space mb-2">Full-Stack Development</h3>
               <p className="text-muted-foreground font-inter">
-                Expert in MERN stack, microservices architecture, and modern web with an active expertise, and building highly scalable, applications and that deliver powerful user interfaces. Currently integrating AI capabilities and LLMs to and build intelligent, smart automation systems.
+                Builds end-to-end systems spanning scalable APIs, reactive UIs, and microservices with LLM integration. Ships full-stack applications with AI capabilities woven into the architecture and interfaces.
               </p>
             </motion.div>
 
@@ -102,7 +103,7 @@ export const About = () => {
               <Cloud className="w-8 h-8 text-primary mb-3" />
               <h3 className="text-xl font-bold font-space mb-2">Cloud Architecture & System Design</h3>
               <p className="text-muted-foreground font-inter">
-                Architecting and deploying the scalable cloud infrastructure built on AWS with Lambda, S3, EventBridge, in integrating comprehensive DevOps practices. Expertise in distributed systems, microservices patterns, dynamic load balancing and designing robust fault-tolerant architectures. AWS Solutions Architect certified.
+                Architecting cloud infrastructure across AWS and Azure with a strong DevOps foundation. Designs for distributed systems, load balancing, and resilient architecture as an AWS Solutions Architect.
               </p>
             </motion.div>
 
@@ -114,7 +115,7 @@ export const About = () => {
               <Database className="w-8 h-8 text-primary mb-3" />
               <h3 className="text-xl font-bold font-space mb-2">Database Design & Optimization</h3>
               <p className="text-muted-foreground font-inter">
-                Proficient in both SQL and NoSQL databases including PostgreSQL, MongoDB, MySQL, and and DynamoDB with strong focus on core performance optimization, efficient schema design, and scalable data architecture. Experienced in schema normalization, indexing, and data integrity across systems.
+                Designs schemas that hold under production load across PostgreSQL, MongoDB, MySQL, and DynamoDB. Deep focus on query optimization, indexing strategies, normalization, and data integrity at scale.
               </p>
             </motion.div>
           </motion.div>
@@ -155,6 +156,7 @@ export const About = () => {
             ))}
           </motion.div>
         </div>
+
       </div>
     </section>
   );

@@ -60,9 +60,16 @@ All colors MUST be HSL.
     @apply border-border;
   }
 
+  html, body, #root {
+    @apply bg-background;
+    overscroll-behavior: none;
+    scroll-behavior: smooth;
+  }
+
   body {
     @apply bg-background text-foreground;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Space Grotesk', sans-serif;
+    overscroll-behavior: none;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -71,13 +78,30 @@ All colors MUST be HSL.
 }
 
 @media (min-width: 768px) {
-  #about .glass-card p,
+  #about .glass-card p {
+    letter-spacing: -0.5px;
+  }
   #projects .glass-card p {
-    text-align: justify;
+    letter-spacing: -0.5px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }
 
 @layer utilities {
+  .ls-tight { letter-spacing: -0.8px; }
+  .ls-snug { letter-spacing: -0.9px; }
+  .ls-dense { letter-spacing: -0.92px; }
+  .ls-tighter { letter-spacing: -1.0px; }
+  .no-break { white-space: nowrap; }
+
   .glass-card {
     background: var(--glass-bg);
     backdrop-filter: blur(10px);
@@ -97,12 +121,3 @@ All colors MUST be HSL.
   }
 }
 
-@layer base {
-  * {
-    @apply border-border;
-  }
-
-  body {
-    @apply bg-background text-foreground;
-  }
-}

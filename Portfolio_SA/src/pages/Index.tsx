@@ -7,11 +7,11 @@ import { Skills } from '@/components/Skills';
 import { Experience } from '@/components/Experience';
 import { Contact } from '@/components/Contact';
 import { ScrollProgress } from '@/components/ScrollProgress';
-import { portfolioConfig } from '@/config/portfolio';
+import { ScrollToTop } from '@/components/ScrollToTop';
 
 const Index = () => {
   return (
-    <div className="relative overflow-x-hidden"> 
+    <div className="relative overflow-x-hidden min-h-screen z-0 bg-background">
       <ScrollProgress />
       <ParticleBackground />
       <Navigation />
@@ -24,10 +24,8 @@ const Index = () => {
           <Experience />
           <Contact />
         </main>
-        <footer className="py-8 text-center text-muted-foreground font-inter border-t border-primary/20">
-          <p>© 2024 {portfolioConfig.name}.</p>
-        </footer>
       </div>
+      <ScrollToTop />
     </div>
   );
 };

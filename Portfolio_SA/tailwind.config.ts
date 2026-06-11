@@ -84,7 +84,7 @@ export default {
       },
       fontFamily: {
         'space': ['Space Grotesk', 'sans-serif'],
-        'inter': ['Inter', 'sans-serif'],
+        'inter': ['Space Grotesk', 'sans-serif'],
       },
     },
   },
